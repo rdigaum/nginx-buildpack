@@ -3,7 +3,7 @@
 set -e
 
 mkdir -p "$1/bin/"
-ls "bin/*"
+ls "/tmp/buildpacks/nginx-buildpack*"
 cp "bin/nginx-cedar" "$1/bin/nginx"
 nginx_version=$(./bin/nginx-cedar -V 2>&1 | head -1 | awk '{ print $NF }')
 echo "-----> nginx-buildpack: Installed ${nginx_version} to app/bin"
